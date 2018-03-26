@@ -54,3 +54,14 @@ Obviously you can put this in any box, or even just keep it on a breadboard. I c
 ![](https://steemitimages.com/DQmakjAbB5BpPTAQKgcx7fU86gbBiCsLt8xQaXGKKCkv2GC/image.png)
 
 I marked up and cut out a hole for the screen, and glued it behind, passed a USB cable through the back (And through the stand) and painted it all Blue (Almost Waves blue!)
+
+### The End
+
+Hope you liked this, and if you have any questions let me know in the comments. 
+
+Please consider leasing to my waves node @ 3P8raEihX2xog12F3jMLBnvRyPS3YVmDfEf
+
+Support Small Nodes!
+
+
+https://waves.theapplicationist.com
