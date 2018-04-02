@@ -1,6 +1,6 @@
 function getstatus()
 
-http.get("http://46.101.104.167/status.php", nil, function(code, nodedata)
+http.get("http://46.101.104.167/node/status.php", nil, function(code, nodedata)
     if (code < 0) then
       print("HTTP request failed")
     else
