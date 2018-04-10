@@ -3,6 +3,7 @@ function getstatus()
 http.get("http://46.101.104.167/node/status.php", nil, function(code, nodedata)
     if (code < 0) then
       print("HTTP request failed")
+      gpio.write(7, gpio.HIGH);
     else
       t = cjson.decode(nodedata)
       version = t["version"]["version"]
@@ -15,6 +16,14 @@ http.get("http://46.101.104.167/node/status.php", nil, function(code, nodedata)
       disk=t["disk"]
       voting=t["voting"]
       print(blockheight)
+                
+      if (t["alert"] == true) then
+        gpio.write(7, gpio.HIGH);
+      else
+        gpio.write(7, gpio.LOW);
+      end
+                
+                
       dofile('displayinfo.lua')
       end
   end)
