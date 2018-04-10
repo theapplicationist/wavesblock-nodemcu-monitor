@@ -52,6 +52,11 @@ function get_server_memory_usage(){
 
 $ram = get_server_memory_usage(); 
 $disk = 100 - floor(100 * disk_free_space("/") / disk_total_space("/"));
+$cpupc = $cpu[0] * 100;
+$alert = false;
+if($disk > 80 || $ram > 80 || $cpupc > 90 || $debugStatus['minerState'] != 'mining blocks') {
+  $alert = true;
+}
 
 $responseObj = (object) [
     'peers' => $connectedPeerCount,
@@ -59,10 +64,11 @@ $responseObj = (object) [
     'miningStatus' => $debugStatus['minerState'] == "mining blocks" ? "Mining" : "Not Mining", 
     'version' => $nodeVersion, 
     'balance' =>  intval($balance['miningBalance']/100000000),
-    'cpu' => $cpu[0] * 100 . '%', 
+    'cpu' => $cpupc . '%', 
     'ram' => intval($ram) . '%', 
     'disk' => $disk . '%', 
-    'voting' => $votedFeatures
+    'voting' => $votedFeatures, 
+    'alert' => $alert
   
     
 ];

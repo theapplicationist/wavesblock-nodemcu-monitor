@@ -15,6 +15,7 @@ cpu=''
 ram=''
 disk=''
 voting=''
+gpio.mode(7, gpio.OUTPUT)
 
 
 STATUS_CHECK_INTERVAL = 1000
